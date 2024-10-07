@@ -179,6 +179,10 @@
     kdePackages.partitionmanager
     wget
     curl
+    gnumake
+    unzip
+    gcc
+    ripgrep
 
     git
     teamspeak5_client
