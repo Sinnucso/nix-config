@@ -29,6 +29,12 @@
           ./hosts/pc-nix/configuration.nix
         ];
       };
+      acer-nix = nixpkgs.lib.nixosSystem {
+	inherit system;   #i dont need this?
+        modules = [
+          ./hosts/acer-nix/configuration.nix
+        ];
+      };
     };
     homeConfigurations = {
       sinnucso = home-manager.lib.homeManagerConfiguration {
