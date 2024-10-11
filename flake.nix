@@ -35,6 +35,12 @@
           ./hosts/acer-nix/configuration.nix
         ];
       };
+      lenovo-nix = nixpkgs.lib.nixosSystem {
+	inherit system;   #i dont need this?
+        modules = [
+          ./hosts/lenovo-nix/configuration.nix
+        ];
+      };
     };
     homeConfigurations = {
       sinnucso = home-manager.lib.homeManagerConfiguration {
