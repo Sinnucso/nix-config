@@ -10,3 +10,12 @@ add remote address:
 git remote add origin git@github.com:Sinnucso/nix-config.git
 ```
 
+
+
+# Plasma-manager
+
+
+tool for detecting setting:
+'''
+nix run github:nix-community/plasma-manager
+'''
