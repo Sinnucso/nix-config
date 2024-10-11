@@ -127,6 +127,9 @@
     enable = true;
     defaultEditor = true;
   };
+  
+  #disables GUI popup for asking ssh passkeys:
+  programs.ssh.enableAskPassword = false;
 
   # Allow unfree packa ges
   nixpkgs.config.allowUnfree = true;
