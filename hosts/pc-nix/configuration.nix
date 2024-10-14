@@ -179,6 +179,7 @@
     kdePackages.partitionmanager
     wget
     curl
+    ungoogled-chromium
 
     git
     teamspeak5_client
