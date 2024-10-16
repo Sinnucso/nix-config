@@ -184,6 +184,7 @@
     git
     teamspeak5_client
     gamemode   #for steam games optimization, add "gamemoderun %command%" to startoptions
+    discord
 
     libreoffice-qt
   ];
