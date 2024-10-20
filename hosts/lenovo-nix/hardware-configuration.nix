@@ -37,13 +37,22 @@
       options = [ "subvol=@nix/@nix" ];
     };
 
+ fileSystems."/mnt/btrfs_root" =
+    { device = "/dev/disk/by-uuid/30c4a8d2-aef5-4528-a7ec-be0d3d7d3346";
+      fsType = "btrfs";
+    };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/E0AF-4033";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  swapDevices = [ ];
+  swapDevices = [ {
+    #check available ram with "free -ght". Recomended swap size with hibernate: RAM+RAM^1/2
+    device = "/mnt/btrfs_root/@nix/@swap/swap";
+    size = 12*1024;
+   } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
