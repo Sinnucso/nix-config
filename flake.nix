@@ -43,13 +43,25 @@
       };
     };
     homeConfigurations = {
-      sinnucso = home-manager.lib.homeManagerConfiguration {
+      "sinnucso@pc-nix" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
 	  inputs.plasma-manager.homeManagerModules.plasma-manager
-          ./hosts/pc-nix/home.nix
-	  #./modules/user/kde/kde.nix
-	  #./modules/user/kde/konsole.nix
+	  ./hosts/pc-nix/home.nix
+        ];
+      };
+      "sinnucso@acer-nix" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+	  inputs.plasma-manager.homeManagerModules.plasma-manager
+	  ./hosts/acer-nix/home.nix
+        ];
+      };
+      "sinnucso@lenovo-nix" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+	  inputs.plasma-manager.homeManagerModules.plasma-manager
+	  ./hosts/lenovo-nix/home.nix
         ];
       };
     };
