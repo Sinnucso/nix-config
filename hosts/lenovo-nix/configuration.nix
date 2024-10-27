@@ -16,7 +16,12 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
- 
+
+  #needed for Suspend then Hibernate (1800 = 30 min)
+  systemd.sleep.extraConfig =''
+    HibernateDelaySec = 1800
+  '';
+
   #zsh
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;

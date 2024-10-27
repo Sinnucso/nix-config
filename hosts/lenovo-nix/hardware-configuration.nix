@@ -50,8 +50,8 @@
 
   swapDevices = [ {
     #check available ram with "free -ght". Recomended swap size with hibernate: RAM+RAM^1/2
-    device = "/mnt/btrfs_root/@nix/@swap/swap";
-    size = 12*1024;
+    device = "/dev/disk/by-uuid/51d7207c-52ff-42a4-b2b6-8239ef6309e4";
+    #size = 12*1024;
    } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

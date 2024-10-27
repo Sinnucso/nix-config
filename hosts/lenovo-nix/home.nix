@@ -5,8 +5,12 @@
     ../../modules/user/sh.nix
     ../../modules/user/kde/kde.nix
     ../../modules/user/git.nix
- 
+    ../../modules/user/hibernate.nix
   ];
+
+
+
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "sinnucso";
