@@ -14,9 +14,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+     mysecrets = {
+      url = "git+ssh://git@gitlab.com/Sinnucso/nixos-secrets.git?shallow=1?ref=main";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, plasma-manager, sops-nix, ... }:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -37,8 +45,10 @@
       };
       lenovo-nix = nixpkgs.lib.nixosSystem {
 	inherit system;   #i dont need this?
+	specialArgs = {inherit inputs;};
         modules = [
           ./hosts/lenovo-nix/configuration.nix
+	  sops-nix.nixosModules.sops
         ];
       };
     };

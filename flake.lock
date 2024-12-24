@@ -21,6 +21,24 @@
         "type": "github"
       }
     },
+    "mysecrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1734876205,
+        "narHash": "sha256-6QuSkWj+ITTQyI69wKqKMyh9n7KdznKOLAAe2BmKLAY=",
+        "ref": "refs/heads/main",
+        "rev": "547363694e024729ffc8b1cfaf2fae7aea1f153e",
+        "revCount": 3,
+        "shallow": false,
+        "type": "git",
+        "url": "ssh://git@gitlab.com/Sinnucso/nixos-secrets.git"
+      },
+      "original": {
+        "shallow": false,
+        "type": "git",
+        "url": "ssh://git@gitlab.com/Sinnucso/nixos-secrets.git"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1729256560,
@@ -63,8 +81,30 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "mysecrets": "mysecrets",
         "nixpkgs": "nixpkgs",
-        "plasma-manager": "plasma-manager"
+        "plasma-manager": "plasma-manager",
+        "sops-nix": "sops-nix"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1733128155,
+        "narHash": "sha256-m6/qwJAJYcidGMEdLqjKzRIjapK4nUfMq7rDCTmZajc=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "c6134b6fff6bda95a1ac872a2a9d5f32e3c37856",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
       }
     }
   },

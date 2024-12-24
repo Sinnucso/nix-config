@@ -2,13 +2,25 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{inputs, config, lib, pkgs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+#      <sops-nix/modules/sops> #dont need this bc of https://github.com/nix-community/NixOS-WSL/discussions/374
+      ../../modules/system/sops.nix
     ];
+
+#  sops = {
+#    defaultSopsFile = ../../secrets.yaml;
+#    age.keyFile = "/home/sinnucso/.config/sops/age/keys.txt";
+##    secrets.nixos_secret = {
+##      sopsFile = ../../secrets.yaml;
+##    };
+#    secrets.test = {};
+#  };
+
   # plasma.enable=true;
 
   # Use the systemd-boot EFI boot loader.
@@ -150,6 +162,9 @@
     git
     # teamspeak5_client
     # gamemode   #for steam games optimization, add "gamemoderun %command%" to startoptions
+    sops
+    ssh-to-age
+    age
 
     libreoffice-qt
   ];
