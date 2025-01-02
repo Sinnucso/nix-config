@@ -4,7 +4,14 @@
 
 {inputs, config, lib, pkgs, ... }:
 
-{
+let
+  #secret = config.sops.secrets.home_manager_secret.path;
+  secret = config.sops.secrets.test.path;
+  test_script = pkgs.writeShellScriptBin "asdftest" ''
+    echo Hello $(cat ${secret})
+    '';
+
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -167,6 +174,7 @@
     age
 
     libreoffice-qt
+    test_script
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
