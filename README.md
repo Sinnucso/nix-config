@@ -33,6 +33,6 @@ currently i dont see the point in generating the key from the ssh key, as the ss
 
 in order to pull the updated secretsfile or .sops.yaml from gitlab, run
 '''
-nix flake lock --update-input mysecrets
+sudo nix flake lock --update-input mysecrets
 '''
 as of now, this works but a warning is given that the command is outdated and will be removed in the future
