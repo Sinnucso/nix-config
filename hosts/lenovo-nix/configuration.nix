@@ -146,6 +146,10 @@ in {
   # Install firefox.
   programs.firefox.enable = true;
 
+  #enable kde connect
+  programs.kdeconnect.enable = true;
+
+
   # neovim
   programs.neovim = {
     enable = true;
@@ -167,12 +171,14 @@ in {
     curl
     home-manager
     git
+    tmux
     # teamspeak5_client
     # gamemode   #for steam games optimization, add "gamemoderun %command%" to startoptions
     sops
     ssh-to-age
     age
-
+    obsidian
+    spotify
     libreoffice-qt
     test_script
   ];
