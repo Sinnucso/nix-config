@@ -24,11 +24,11 @@
     "mysecrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1734876205,
-        "narHash": "sha256-6QuSkWj+ITTQyI69wKqKMyh9n7KdznKOLAAe2BmKLAY=",
+        "lastModified": 1742122818,
+        "narHash": "sha256-DKmNp/BPMajDvP2OfNheAa8dWICny+Yz63Qb+gG63IE=",
         "ref": "refs/heads/main",
-        "rev": "547363694e024729ffc8b1cfaf2fae7aea1f153e",
-        "revCount": 3,
+        "rev": "37aaaa823e23ec52b2f86a9a566b3c2098ce2eb4",
+        "revCount": 7,
         "shallow": false,
         "type": "git",
         "url": "ssh://git@gitlab.com/Sinnucso/nixos-secrets.git"
